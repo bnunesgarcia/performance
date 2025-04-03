@@ -12,8 +12,8 @@ jobs:
 
     - name: Add K6 repository
       run: |
-        sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 33C6A3A8A2F2FA6B
-        echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+        wget -q -O - https://dl.k6.io/key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/k6-archive-keyring.gpg
+        echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list > /dev/null
 
     - name: Install K6
       run: |
@@ -22,7 +22,7 @@ jobs:
 
     - name: Run K6 Load Test
       run: k6 run load-test.js
-
+      
     - name: Upload Load Test Results
       uses: actions/upload-artifact@v4
       with:
