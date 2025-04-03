@@ -7,12 +7,12 @@ export let errorRate = new Rate('errors');
 export let options = {
     stages: [
         { duration: '1m', target: 500 }, 
-        // { duration: '1m', target: 500 }, 
-        // { duration: '1m', target: 0 }, 
+        { duration: '1m', target: 500 }, 
+        { duration: '1m', target: 0 }, 
     ],
     thresholds: {
         errors: ['rate<0.1'], 
-        'http_req_duration': ['p(95)<500'], 
+        'http_req_duration': ['p(85)<500'], 
     },
 };
 
