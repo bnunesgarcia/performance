@@ -32,12 +32,8 @@ Para executar o teste de carga localmente, siga os passos abaixo:
 
 ## Analisando os Resultados
 
-Os resultados do teste de carga serão gerados no arquivo `load-test-result.json`. Você pode analisar os resultados usando ferramentas adicionais ou inspeccionando diretamente o arquivo JSON.
+Os resultados do teste de carga serão gerados no arquivo `load-test-result.csv`. Você pode analisar os resultados usando ferramentas adicionais ou inspeccionando diretamente o arquivo CSV.
 
 ## Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests para melhorias.
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
