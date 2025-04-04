@@ -21,10 +21,10 @@ jobs:
         sudo apt-get install -y k6
 
     - name: Run K6 Load Test
-      run: k6 run --out json=load-test-result.json load-test.js
+      run: k6 run --out csv=load-test-result.csv load-test.js
       
     - name: Upload Load Test Results
       uses: actions/upload-artifact@v4
       with:
         name: load-test-result
-        path: load-test-result.json
+        path: load-test-result.csv
